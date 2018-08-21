@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        let layout = UICollectionViewFlowLayout()
-        window?.rootViewController = UINavigationController(rootViewController: ModelsController(collectionViewLayout: layout))
-        
+        window?.rootViewController = LoginController()
+
+      
         return true
     }
 

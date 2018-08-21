@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B8BAEEF84807C5F4B3583E3 /* Pods_PhotoGigs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3062D72A559ADB131BFDF404 /* Pods_PhotoGigs.framework */; };
 		CCE7E398212AA87E00691C59 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E397212AA87E00691C59 /* BannerCell.swift */; };
 		CCE7E39A212AA8D000691C59 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E399212AA8D000691C59 /* ActionCell.swift */; };
 		CCE7E39C212AAB3600691C59 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E39B212AAB3600691C59 /* GalleryCell.swift */; };
+		CCE7E39E212BB3B200691C59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E39D212BB3B200691C59 /* TabBarController.swift */; };
+		CCE7E3A0212BB8EE00691C59 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E39F212BB8EE00691C59 /* ProfileController.swift */; };
+		CCE7E3A2212BC02900691C59 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E3A1212BC02900691C59 /* LoginController.swift */; };
+		CCE7E3A4212C085800691C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCE7E3A3212C085800691C59 /* GoogleService-Info.plist */; };
 		E8C5D36A212692D500ACCE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5D369212692D500ACCE0C /* AppDelegate.swift */; };
 		E8C5D36C212692D500ACCE0C /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5D36B212692D500ACCE0C /* ModelsController.swift */; };
 		E8C5D371212692D700ACCE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C5D370212692D700ACCE0C /* Assets.xcassets */; };
@@ -18,9 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3062D72A559ADB131BFDF404 /* Pods_PhotoGigs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGigs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60567C94A2E2DEE3C7FDC30 /* Pods-PhotoGigs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGigs.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGigs/Pods-PhotoGigs.release.xcconfig"; sourceTree = "<group>"; };
 		CCE7E397212AA87E00691C59 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		CCE7E399212AA8D000691C59 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		CCE7E39B212AAB3600691C59 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		CCE7E39D212BB3B200691C59 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		CCE7E39F212BB8EE00691C59 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		CCE7E3A1212BC02900691C59 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		CCE7E3A3212C085800691C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8C5D366212692D500ACCE0C /* PhotoGigs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGigs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C5D369212692D500ACCE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8C5D36B212692D500ACCE0C /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
@@ -28,6 +39,7 @@
 		E8C5D373212692D700ACCE0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8C5D375212692D700ACCE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8C5D37B2127BC3A00ACCE0C /* ModelDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDetailController.swift; sourceTree = "<group>"; };
+		EDA8E1F2319B5D89979F11D1 /* Pods-PhotoGigs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGigs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGigs/Pods-PhotoGigs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B8BAEEF84807C5F4B3583E3 /* Pods_PhotoGigs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		643E1884F005A0918E5A2AC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3062D72A559ADB131BFDF404 /* Pods_PhotoGigs.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8517DEF71204E1EEB3C95B92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDA8E1F2319B5D89979F11D1 /* Pods-PhotoGigs.debug.xcconfig */,
+				B60567C94A2E2DEE3C7FDC30 /* Pods-PhotoGigs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E8C5D35D212692D500ACCE0C = {
 			isa = PBXGroup;
 			children = (
 				E8C5D368212692D500ACCE0C /* PhotoGigs */,
 				E8C5D367212692D500ACCE0C /* Products */,
+				8517DEF71204E1EEB3C95B92 /* Pods */,
+				643E1884F005A0918E5A2AC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				E8C5D369212692D500ACCE0C /* AppDelegate.swift */,
+				CCE7E39D212BB3B200691C59 /* TabBarController.swift */,
+				CCE7E39F212BB8EE00691C59 /* ProfileController.swift */,
+				CCE7E3A1212BC02900691C59 /* LoginController.swift */,
 				E8C5D36B212692D500ACCE0C /* ModelsController.swift */,
 				E8C5D37B2127BC3A00ACCE0C /* ModelDetailController.swift */,
 				CCE7E39B212AAB3600691C59 /* GalleryCell.swift */,
@@ -69,6 +104,7 @@
 				E8C5D370212692D700ACCE0C /* Assets.xcassets */,
 				E8C5D372212692D700ACCE0C /* LaunchScreen.storyboard */,
 				E8C5D375212692D700ACCE0C /* Info.plist */,
+				CCE7E3A3212C085800691C59 /* GoogleService-Info.plist */,
 			);
 			path = PhotoGigs;
 			sourceTree = "<group>";
@@ -80,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8C5D378212692D700ACCE0C /* Build configuration list for PBXNativeTarget "PhotoGigs" */;
 			buildPhases = (
+				B846B43D6B9DD9947F898202 /* [CP] Check Pods Manifest.lock */,
 				E8C5D362212692D500ACCE0C /* Sources */,
 				E8C5D363212692D500ACCE0C /* Frameworks */,
 				E8C5D364212692D500ACCE0C /* Resources */,
+				96E083CADA2592686E4B013C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,10 +171,70 @@
 			files = (
 				E8C5D374212692D700ACCE0C /* LaunchScreen.storyboard in Resources */,
 				E8C5D371212692D700ACCE0C /* Assets.xcassets in Resources */,
+				CCE7E3A4212C085800691C59 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		96E083CADA2592686E4B013C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGigs/Pods-PhotoGigs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhotoGigs/Pods-PhotoGigs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B846B43D6B9DD9947F898202 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoGigs-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8C5D362212692D500ACCE0C /* Sources */ = {
@@ -147,8 +245,11 @@
 				E8C5D36C212692D500ACCE0C /* ModelsController.swift in Sources */,
 				CCE7E39A212AA8D000691C59 /* ActionCell.swift in Sources */,
 				CCE7E398212AA87E00691C59 /* BannerCell.swift in Sources */,
+				CCE7E3A2212BC02900691C59 /* LoginController.swift in Sources */,
+				CCE7E39E212BB3B200691C59 /* TabBarController.swift in Sources */,
 				E8C5D37C2127BC3A00ACCE0C /* ModelDetailController.swift in Sources */,
 				E8C5D36A212692D500ACCE0C /* AppDelegate.swift in Sources */,
+				CCE7E3A0212BB8EE00691C59 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +383,7 @@
 		};
 		E8C5D379212692D700ACCE0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDA8E1F2319B5D89979F11D1 /* Pods-PhotoGigs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -290,7 +392,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoGigs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.malmalmal.PhotoGigs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,6 +401,7 @@
 		};
 		E8C5D37A212692D700ACCE0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B60567C94A2E2DEE3C7FDC30 /* Pods-PhotoGigs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -307,7 +410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PhotoGigs;
+				PRODUCT_BUNDLE_IDENTIFIER = com.malmalmal.PhotoGigs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
