@@ -21,7 +21,7 @@ class TabBarController: UITabBarController {
     let profileLayout = ProfileController()
     let profileController = UINavigationController(rootViewController: profileLayout)
     profileController.title = "Profile"
-    profileController.tabBarItem.image = UIImage(named: "user")
+    profileController.tabBarItem.image = UIImage(named: "user-image")
 //
 //    let getRollLayout = GetRollCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
 //    let getRollController = UINavigationController(rootViewController: getRollLayout)

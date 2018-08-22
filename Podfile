@@ -12,5 +12,6 @@ target 'PhotoGigs' do
   pod 'Firebase/Storage'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 
 end
