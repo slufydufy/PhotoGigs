@@ -36,7 +36,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print("123")
+      
+      print("123", error)
+      guard let idToken = user.authentication.idToken else { return }
+      guard let accessToken = user.authentication.accessToken else { return }
+      let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+      Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
+        if error != nil {
+          print("Google problem is", error!)
+          return
+        }
+        guard let uid = user?.user.uid else { return }
+        print("Google sign in with", uid)
+      }
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

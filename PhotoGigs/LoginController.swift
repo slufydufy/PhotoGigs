@@ -17,9 +17,7 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     view.backgroundColor = UIColor(white: 1, alpha: 0.95)
-    
     navigationController?.navigationBar.prefersLargeTitles = true
-    
     setupView()
   }
   
@@ -71,8 +69,34 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     btn.setTitleColor(UIColor.white, for: .normal)
     btn.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 16)
     btn.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+    btn.addTarget(self, action: #selector(handleSubmit), for: .touchUpInside)
     return btn
   }()
+  
+  @objc func handleSubmit() {
+    guard let email = emailField.text, let pass = passField.text, let name = nameField.text else {
+      print("Form can not blank")
+      return
+    }
+    
+    Auth.auth().createUser(withEmail: email, password: pass) { (authUser, error) in
+      if error != nil {
+        print(error!)
+        return
+      }
+      guard let uid = authUser?.user.uid else { return }
+      let ref = Database.database().reference(fromURL: "https://photogigs-79bd9.firebaseio.com/")
+      let userRef = ref.child("users").child(uid)
+      let values = ["name": name, "email": email]
+      userRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
+        if err != nil {
+          print(err!)
+          return
+        }
+      })
+    }
+    present(TabBarController(), animated: true, completion: nil)
+  }
 
     let fbButton : FBSDKLoginButton = {
         let btn = FBSDKLoginButton()
@@ -118,25 +142,18 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     fbButton.delegate = self
     fbButton.readPermissions = ["email", "public_profile"]
     fbButton.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: 100).isActive = true
-//    fbButton.heightAnchor.constraint(equalToConstant: 50)
     fbButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
     fbButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
     
     view.addSubview(googleButton)
     GIDSignIn.sharedInstance().uiDelegate = self
-//    googleButton.readPermissions = ["email", "public_profile"]
     googleButton.topAnchor.constraint(equalTo: fbButton.bottomAnchor, constant: 20).isActive = true
-//    googleButton.heightAnchor.constraint(equalToConstant: 30)
     googleButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
     googleButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-    
   }
-  
 }
 
 extension LoginController : FBSDKLoginButtonDelegate {
-
-
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("did Logout from FB")
     }
@@ -146,38 +163,62 @@ extension LoginController : FBSDKLoginButtonDelegate {
             print(error)
             return
         }
-        
         showEmail()
-        
     }
+  
     
     func showEmail() {
-        
-        let accessToken =  FBSDKAccessToken.current()
+      let accessToken =  FBSDKAccessToken.current()
         guard let accessTokenString = accessToken?.tokenString else {
             return
         }
         let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
-        
-        Auth.auth().signIn(with: credential) { (user, error) in
-            if error != nil {
-                print("problem is", error!)
-                return
-            }
-            print("sign in with", user!)
+      
+      Auth.auth().signInAndRetrieveData(with: credential) { (authUser, error) in
+        if error != nil {
+          print("FB problem is", error!)
+          return
         }
-        
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
-            if err != nil {
-                print("error request graph", err!)
-                return
-            }
-            print(result!)
-        }
+        guard let username = authUser!.additionalUserInfo?.profile else { return }
+        print("FB sign in with", username)
+      }
+      
+//      FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
+//        if err != nil {
+//          print("error request graph", err!)
+//          return
+//        }
+//        print(result!)
+//
+//
+//
+//      }
     }
-    
-    
-    
+  
+//  func saveUserToDatabase() {
+//    guard let email = emailField.text, let pass = passField.text, let name = nameField.text else {
+//      print("Form can not blank")
+//      return
+//    }
+//
+//    Auth.auth().createUser(withEmail: email, password: pass) { (authUser, error) in
+//      if error != nil {
+//        print(error!)
+//        return
+//      }
+//      guard let uid = authUser?.user.uid else { return }
+//      let ref = Database.database().reference(fromURL: "https://photogigs-79bd9.firebaseio.com/")
+//      let userRef = ref.child("users").child(uid)
+//      let values = ["name": name, "email": email]
+//      userRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
+//        if err != nil {
+//          print(err!)
+//          return
+//        }
+//      })
+//    }
+//  }
+  
 }
 
 
