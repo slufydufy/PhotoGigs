@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ModelsController: UICollectionViewController {
     private let modelCell = "modelCell"
@@ -18,14 +19,32 @@ class ModelsController: UICollectionViewController {
         collectionView?.register(ModelCell.self, forCellWithReuseIdentifier: modelCell)
         self.title = "Feeds"
         navigationController?.navigationBar.prefersLargeTitles = true
+      
+        checkIfUserLoggedIn()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+  
+    func checkIfUserLoggedIn() {
+      //user not logged in
+      if Auth.auth().currentUser?.uid == nil {
+        performSelector(onMainThread: #selector(handleLogout), with: nil, waitUntilDone: true)
+        handleLogout()
+        }
+      }
+  
+    @objc func handleLogout() {
+      
+      do {
+        try Auth.auth().signOut()
+      } catch let logoffError {
+        print(logoffError)
+      }
+      present(RegisterController(), animated: true, completion: nil)
+    }
 }
 
 extension ModelsController {

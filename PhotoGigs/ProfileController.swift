@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileController : UIViewController {
   
@@ -45,8 +46,15 @@ class ProfileController : UIViewController {
   }()
   
   @objc func handleLogOut() {
-    dismiss(animated: true, completion: nil)
+      do {
+        try Auth.auth().signOut()
+      } catch let logoffError {
+        print(logoffError)
+      }
+      let vc = RegisterController()
+      present(vc, animated: true, completion: nil)
   }
+  
   
   
   

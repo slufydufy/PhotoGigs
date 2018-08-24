@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8B8BAEEF84807C5F4B3583E3 /* Pods_PhotoGigs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3062D72A559ADB131BFDF404 /* Pods_PhotoGigs.framework */; };
+		CCB5B622212FFDDB008EBE1B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB5B621212FFDDB008EBE1B /* LoginController.swift */; };
 		CCE7E398212AA87E00691C59 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E397212AA87E00691C59 /* BannerCell.swift */; };
 		CCE7E39A212AA8D000691C59 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E399212AA8D000691C59 /* ActionCell.swift */; };
 		CCE7E39C212AAB3600691C59 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E39B212AAB3600691C59 /* GalleryCell.swift */; };
 		CCE7E39E212BB3B200691C59 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E39D212BB3B200691C59 /* TabBarController.swift */; };
 		CCE7E3A0212BB8EE00691C59 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E39F212BB8EE00691C59 /* ProfileController.swift */; };
-		CCE7E3A2212BC02900691C59 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E3A1212BC02900691C59 /* LoginController.swift */; };
+		CCE7E3A2212BC02900691C59 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E3A1212BC02900691C59 /* RegisterController.swift */; };
 		CCE7E3A4212C085800691C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCE7E3A3212C085800691C59 /* GoogleService-Info.plist */; };
 		E8C5D36A212692D500ACCE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5D369212692D500ACCE0C /* AppDelegate.swift */; };
 		E8C5D36C212692D500ACCE0C /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5D36B212692D500ACCE0C /* ModelsController.swift */; };
@@ -25,12 +26,13 @@
 /* Begin PBXFileReference section */
 		3062D72A559ADB131BFDF404 /* Pods_PhotoGigs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoGigs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60567C94A2E2DEE3C7FDC30 /* Pods-PhotoGigs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoGigs.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoGigs/Pods-PhotoGigs.release.xcconfig"; sourceTree = "<group>"; };
+		CCB5B621212FFDDB008EBE1B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CCE7E397212AA87E00691C59 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		CCE7E399212AA8D000691C59 /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		CCE7E39B212AAB3600691C59 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		CCE7E39D212BB3B200691C59 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CCE7E39F212BB8EE00691C59 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		CCE7E3A1212BC02900691C59 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		CCE7E3A1212BC02900691C59 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		CCE7E3A3212C085800691C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8C5D366212692D500ACCE0C /* PhotoGigs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGigs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C5D369212692D500ACCE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +99,8 @@
 				E8C5D369212692D500ACCE0C /* AppDelegate.swift */,
 				CCE7E39D212BB3B200691C59 /* TabBarController.swift */,
 				CCE7E39F212BB8EE00691C59 /* ProfileController.swift */,
-				CCE7E3A1212BC02900691C59 /* LoginController.swift */,
+				CCE7E3A1212BC02900691C59 /* RegisterController.swift */,
+				CCB5B621212FFDDB008EBE1B /* LoginController.swift */,
 				E8C5D36B212692D500ACCE0C /* ModelsController.swift */,
 				E8C5D37B2127BC3A00ACCE0C /* ModelDetailController.swift */,
 				CCE7E39B212AAB3600691C59 /* GalleryCell.swift */,
@@ -267,11 +270,12 @@
 				E8C5D36C212692D500ACCE0C /* ModelsController.swift in Sources */,
 				CCE7E39A212AA8D000691C59 /* ActionCell.swift in Sources */,
 				CCE7E398212AA87E00691C59 /* BannerCell.swift in Sources */,
-				CCE7E3A2212BC02900691C59 /* LoginController.swift in Sources */,
+				CCE7E3A2212BC02900691C59 /* RegisterController.swift in Sources */,
 				CCE7E39E212BB3B200691C59 /* TabBarController.swift in Sources */,
 				E8C5D37C2127BC3A00ACCE0C /* ModelDetailController.swift in Sources */,
 				E8C5D36A212692D500ACCE0C /* AppDelegate.swift in Sources */,
 				CCE7E3A0212BB8EE00691C59 /* ProfileController.swift in Sources */,
+				CCB5B622212FFDDB008EBE1B /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
