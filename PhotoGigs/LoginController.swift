@@ -64,10 +64,6 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
     return btn
   }()
   
-  @objc func handleLogin() {
-    
-  }
-  
   let emailLoginLabel : UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -98,16 +94,33 @@ class LoginController : UIViewController, GIDSignInUIDelegate {
   let submitButton : UIButton = {
     let btn = UIButton(type: .system)
     btn.translatesAutoresizingMaskIntoConstraints = false
-    btn.setTitle("submit", for: .normal)
+    btn.setTitle("Login", for: .normal)
     btn.setTitleColor(UIColor.white, for: .normal)
     btn.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 16)
     btn.backgroundColor = UIColor.black.withAlphaComponent(0.1)
     btn.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
     return btn
   }()
-  
-  
-  
+    
+    @objc func handleLogin() {
+        
+        guard let email = emailField.text, let pass = passField.text else {
+            print("Form can not blank")
+            return
+        }
+        Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
+            if error != nil {
+                print(error!)
+            }
+            else {
+                print("login succeded")
+                print(user!)
+                
+                self.present(ModelsController(collectionViewLayout: UICollectionViewFlowLayout()), animated: true, completion: nil)
+            }
+        }
+    }
+    
   func setupView() {
     
     view.addSubview(formView)

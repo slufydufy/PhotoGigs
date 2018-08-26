@@ -15,7 +15,7 @@ class ProfileController : UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     view.backgroundColor = UIColor(white: 1, alpha: 0.95)
-//    self.title = "Profile"
+    self.title = "Profile"
     navigationController?.navigationBar.prefersLargeTitles = true
     
     setupView()
@@ -51,8 +51,7 @@ class ProfileController : UIViewController {
       } catch let logoffError {
         print(logoffError)
       }
-      let vc = RegisterController()
-      present(vc, animated: true, completion: nil)
+      present(NewLogin(), animated: true, completion: nil)
   }
   
   

@@ -15,7 +15,8 @@ class TabBarController: UITabBarController {
     
     let feedlayout = ModelsController(collectionViewLayout: UICollectionViewFlowLayout())
     let feedController = UINavigationController(rootViewController: feedlayout)
-    feedController.title = "Home"
+    
+    feedController.tabBarItem.title = "Models"
     feedController.tabBarItem.image = UIImage(named: "Feed")
     
     let profileLayout = ProfileController()

@@ -17,7 +17,7 @@ class ModelsController: UICollectionViewController {
         // Do any additional setup after loading the view, typically from a nib.
         collectionView?.backgroundColor = UIColor(white: 1, alpha: 0.95)
         collectionView?.register(ModelCell.self, forCellWithReuseIdentifier: modelCell)
-        self.title = "Feeds"
+        self.title = "Models"
         navigationController?.navigationBar.prefersLargeTitles = true
       
         checkIfUserLoggedIn()
@@ -37,13 +37,12 @@ class ModelsController: UICollectionViewController {
       }
   
     @objc func handleLogout() {
-      
       do {
         try Auth.auth().signOut()
       } catch let logoffError {
         print(logoffError)
       }
-      present(RegisterController(), animated: true, completion: nil)
+        present(NewLogin(), animated: true, completion: nil)
     }
 }
 

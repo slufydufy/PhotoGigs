@@ -16,6 +16,8 @@
 		CCE7E3A0212BB8EE00691C59 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E39F212BB8EE00691C59 /* ProfileController.swift */; };
 		CCE7E3A2212BC02900691C59 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE7E3A1212BC02900691C59 /* RegisterController.swift */; };
 		CCE7E3A4212C085800691C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CCE7E3A3212C085800691C59 /* GoogleService-Info.plist */; };
+		E8490A4B21329AC900920372 /* NewLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8490A4A21329AC900920372 /* NewLogin.swift */; };
+		E8490A4D2132DC8A00920372 /* NewRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8490A4C2132DC8A00920372 /* NewRegister.swift */; };
 		E8C5D36A212692D500ACCE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5D369212692D500ACCE0C /* AppDelegate.swift */; };
 		E8C5D36C212692D500ACCE0C /* ModelsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C5D36B212692D500ACCE0C /* ModelsController.swift */; };
 		E8C5D371212692D700ACCE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C5D370212692D700ACCE0C /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		CCE7E39F212BB8EE00691C59 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		CCE7E3A1212BC02900691C59 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		CCE7E3A3212C085800691C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8490A4A21329AC900920372 /* NewLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLogin.swift; sourceTree = "<group>"; };
+		E8490A4C2132DC8A00920372 /* NewRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRegister.swift; sourceTree = "<group>"; };
 		E8C5D366212692D500ACCE0C /* PhotoGigs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGigs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C5D369212692D500ACCE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8C5D36B212692D500ACCE0C /* ModelsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				CCE7E39F212BB8EE00691C59 /* ProfileController.swift */,
 				CCE7E3A1212BC02900691C59 /* RegisterController.swift */,
 				CCB5B621212FFDDB008EBE1B /* LoginController.swift */,
+				E8490A4A21329AC900920372 /* NewLogin.swift */,
+				E8490A4C2132DC8A00920372 /* NewRegister.swift */,
 				E8C5D36B212692D500ACCE0C /* ModelsController.swift */,
 				E8C5D37B2127BC3A00ACCE0C /* ModelDetailController.swift */,
 				CCE7E39B212AAB3600691C59 /* GalleryCell.swift */,
@@ -273,8 +279,10 @@
 				CCE7E3A2212BC02900691C59 /* RegisterController.swift in Sources */,
 				CCE7E39E212BB3B200691C59 /* TabBarController.swift in Sources */,
 				E8C5D37C2127BC3A00ACCE0C /* ModelDetailController.swift in Sources */,
+				E8490A4D2132DC8A00920372 /* NewRegister.swift in Sources */,
 				E8C5D36A212692D500ACCE0C /* AppDelegate.swift in Sources */,
 				CCE7E3A0212BB8EE00691C59 /* ProfileController.swift in Sources */,
+				E8490A4B21329AC900920372 /* NewLogin.swift in Sources */,
 				CCB5B622212FFDDB008EBE1B /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.malmalmal.PhotoGigs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -443,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.malmalmal.PhotoGigs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
