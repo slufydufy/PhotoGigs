@@ -51,7 +51,7 @@ class ProfileController : UIViewController {
       } catch let logoffError {
         print(logoffError)
       }
-      present(NewLogin(), animated: true, completion: nil)
+      present(TabBarController(), animated: true, completion: nil)
   }
   
   

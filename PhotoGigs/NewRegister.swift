@@ -109,47 +109,7 @@ class NewRegister : UIViewController {
             }
         }
     }
-    
-    let otherRegisterLabel : UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Register with other account"
-        label.font = UIFont(name: "Avenir-Light", size: 18)
-        label.textColor = UIColor.lightGray
-        return label
-    }()
-    
-    let fbButton : UIButton = {
-        let btn = UIButton(type: .system)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setTitle("Facebook", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor = UIColor.blue
-        btn.addTarget(self, action: #selector(handleFB), for: .touchUpInside)
-        return btn
-    }()
-    
-    @objc func handleFB() {
-        FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, error) in
-            if error != nil {
-                print("fb login error :", error!)
-            }
-            self.showUserInfo()
-        }
-    }
-    
-    func showUserInfo() {
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
-            if err != nil {
-                print("error request graph", err!)
-                return
-            }
-            print(result!)
-            
-        }
-    }
-    
-    
+  
     func setupView() {
         
         view.addSubview(formView)
@@ -181,14 +141,6 @@ class NewRegister : UIViewController {
         registerButton.topAnchor.constraint(equalTo: passField.bottomAnchor, constant: 40).isActive = true
         registerButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         registerButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
-        
-        view.addSubview(otherRegisterLabel)
-        otherRegisterLabel.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 50).isActive = true
-        otherRegisterLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        
-        view.addSubview(fbButton)
-        fbButton.topAnchor.constraint(equalTo: otherRegisterLabel.bottomAnchor, constant: 20).isActive = true
-        fbButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        fbButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+
     }
 }

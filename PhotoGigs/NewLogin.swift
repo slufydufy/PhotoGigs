@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class NewLogin : UIViewController {
     
@@ -111,7 +112,53 @@ class NewLogin : UIViewController {
         label.textColor = UIColor.lightGray
         return label
     }()
-    
+  
+    let fbButton : UIButton = {
+      let btn = UIButton(type: .system)
+      btn.translatesAutoresizingMaskIntoConstraints = false
+      btn.setTitle("Facebook", for: .normal)
+      btn.setTitleColor(UIColor.white, for: .normal)
+      btn.backgroundColor = UIColor.blue
+      btn.addTarget(self, action: #selector(handleFB), for: .touchUpInside)
+      return btn
+    }()
+  
+    @objc func handleFB() {
+      FBSDKLoginManager().logIn(withReadPermissions: ["email", "public_profile"], from: self) { (result, error) in
+        if error != nil {
+          print("fb login error :", error!)
+        }
+        print(result!)
+        self.authToFirebase()
+      }
+    }
+  
+    func authToFirebase() {
+      let accessToken =  FBSDKAccessToken.current()
+      guard let accessTokenString = accessToken?.tokenString else { return }
+      let credential = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+      
+      Auth.auth().signInAndRetrieveData(with: credential) { (authUser, error) in
+        if error != nil {
+          print("Auth pake FB error :", error!)
+          return
+        }
+        guard let username = authUser!.additionalUserInfo?.profile else { return }
+        guard let name = username["name"] as? String else { return }
+        guard let email = username["email"] as? String else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let ref = Database.database().reference(fromURL: "https://photogigs-79bd9.firebaseio.com/").child("users").child(uid)
+        let value = ["name": name, "email": email]
+        ref.updateChildValues(value, withCompletionBlock: { (err, ref) in
+          if err != nil {
+            print("errornya :", err!)
+            return
+          }
+          print("brasil nambah user ke db")
+          self.present(TabBarController(), animated: true, completion: nil)
+        })
+      }
+    }
     
     func setupView() {
         
@@ -149,6 +196,10 @@ class NewLogin : UIViewController {
         view.addSubview(otherLoginLabel)
         otherLoginLabel.topAnchor.constraint(equalTo: LoginButton.bottomAnchor, constant: 50).isActive = true
         otherLoginLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-        
+      
+        view.addSubview(fbButton)
+        fbButton.topAnchor.constraint(equalTo: otherLoginLabel.bottomAnchor, constant: 20).isActive = true
+        fbButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        fbButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
     }
 }
