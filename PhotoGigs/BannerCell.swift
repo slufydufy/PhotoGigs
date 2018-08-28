@@ -58,6 +58,14 @@ class BannerCell : UICollectionViewCell {
     return img
   }()
   
+  let editButton : UIButton = {
+    let btn = UIButton(type: .system)
+    btn.translatesAutoresizingMaskIntoConstraints = false
+    btn.setTitle("edit", for: .normal)
+    
+    return btn
+  }()
+  
   func setupView() {
     
     addSubview(lineView)
