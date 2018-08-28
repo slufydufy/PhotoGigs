@@ -19,8 +19,9 @@ class ModelsController: UICollectionViewController {
         collectionView?.register(ModelCell.self, forCellWithReuseIdentifier: modelCell)
         self.title = "Models"
         navigationController?.navigationBar.prefersLargeTitles = true
-      
         checkIfUserLoggedIn()
+      guard let nameUser = Auth.auth().currentUser?.uid else {return}
+      print(nameUser)
     }
 
     override func didReceiveMemoryWarning() {

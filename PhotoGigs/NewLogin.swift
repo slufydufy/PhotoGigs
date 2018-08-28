@@ -143,6 +143,8 @@ class NewLogin : UIViewController {
           print("Auth pake FB error :", error!)
           return
         }
+        else {
+        
         guard let username = authUser!.additionalUserInfo?.profile else { return }
         guard let name = username["name"] as? String else { return }
         guard let email = username["email"] as? String else { return }
@@ -154,9 +156,11 @@ class NewLogin : UIViewController {
             print("errornya :", err!)
             return
           }
-          print("brasil nambah user ke db")
+          print("brasil nambah FB user ke db")
           self.present(TabBarController(), animated: true, completion: nil)
         })
+        
+        }
       }
     }
     
