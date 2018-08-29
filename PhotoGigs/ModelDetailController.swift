@@ -23,7 +23,7 @@ class ModelDetailController : UICollectionViewController {
 //        self.title = "PhotoGigs"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel , target: self, action: #selector(backButton))
-      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(handleEdit))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(handleEdit))
     }
     
     @objc func backButton() {
@@ -31,7 +31,8 @@ class ModelDetailController : UICollectionViewController {
     }
   
     @objc func handleEdit() {
-        present(ModelEdit(), animated: true, completion: nil)
+//        present(ModelEdit(), animated: true, completion: nil)
+        present(UINavigationController(rootViewController: ModelEdit()), animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
