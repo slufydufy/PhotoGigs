@@ -86,47 +86,36 @@ extension ModelEdit {
       return cell
     } else if indexPath.row == 2 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "city", for: indexPath) as! CityCell
-      cell.textLabel?.text = "City"
       return cell
     } else if indexPath.row == 3 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "height", for: indexPath) as! HeightCell
-      cell.textLabel?.text = "Height"
       return cell
     } else if indexPath.row == 4 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "weight", for: indexPath) as! WeightCell
-      cell.textLabel?.text = "Weight"
       return cell
     } else if indexPath.row == 5 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "bust", for: indexPath) as! BustCell
-      cell.textLabel?.text = "Bust Size"
       return cell
     } else if indexPath.row == 6 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "waist", for: indexPath) as! WaistCell
-      cell.textLabel?.text = "Waist Size"
       return cell
     } else if indexPath.row == 7 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "hips", for: indexPath) as! HipsCell
-      cell.textLabel?.text = "Hips Size"
       return cell
     } else if indexPath.row == 8 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "shoes", for: indexPath) as! ShoesCell
-      cell.textLabel?.text = "Shoes Size"
       return cell
     } else if indexPath.row == 9 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "topSize", for: indexPath) as! TopSizeCell
-      cell.textLabel?.text = "Top Size"
       return cell
     } else if indexPath.row == 10 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "bottomSize", for: indexPath) as! BottomSizeCell
-      cell.textLabel?.text = "Bottom Size"
       return cell
     } else if indexPath.row == 11 {
       let cell = tableView.dequeueReusableCell(withIdentifier: "hair", for: indexPath) as! HairCell
-      cell.textLabel?.text = "Hair Color"
       return cell
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: "eyes", for: indexPath) as! EyesCell
-      cell.textLabel?.text = "Eyes Color"
       return cell
     }
   }
@@ -198,8 +187,32 @@ class CityCell : UITableViewCell {
     setupView()
   }
   
+  let cityLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Location (City)"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let cityText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(cityLabel)
+    cityLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    cityLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(cityText)
+    cityText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    cityText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    cityText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -215,8 +228,32 @@ class HeightCell : UITableViewCell {
     setupView()
   }
   
+  let heightLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Height (cm)"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let heightText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(heightLabel)
+    heightLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    heightLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(heightText)
+    heightText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    heightText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    heightText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -232,8 +269,32 @@ class WeightCell : UITableViewCell {
     setupView()
   }
   
+  let weightLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Weight (kg)"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let weightText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(weightLabel)
+    weightLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    weightLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(weightText)
+    weightText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    weightText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    weightText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -249,8 +310,32 @@ class BustCell : UITableViewCell {
     setupView()
   }
   
+  let bustLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Bust"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let bustText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(bustLabel)
+    bustLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    bustLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(bustText)
+    bustText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    bustText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    bustText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -266,8 +351,32 @@ class WaistCell : UITableViewCell {
     setupView()
   }
   
+  let waistLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Waist"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let waistText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(waistLabel)
+    waistLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    waistLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(waistText)
+    waistText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    waistText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    waistText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -283,8 +392,32 @@ class HipsCell : UITableViewCell {
     setupView()
   }
   
+  let hipsLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Hips"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let hipsText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(hipsLabel)
+    hipsLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    hipsLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(hipsText)
+    hipsText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    hipsText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    hipsText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -300,8 +433,32 @@ class ShoesCell : UITableViewCell {
     setupView()
   }
   
+  let shoesLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Shoes"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let shoesText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(shoesLabel)
+    shoesLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    shoesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(shoesText)
+    shoesText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    shoesText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    shoesText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -317,8 +474,32 @@ class TopSizeCell : UITableViewCell {
     setupView()
   }
   
+  let topLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Top"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let topText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(topLabel)
+    topLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    topLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(topText)
+    topText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    topText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    topText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -334,8 +515,32 @@ class BottomSizeCell : UITableViewCell {
     setupView()
   }
   
+  let bottomLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Bottom"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let bottomText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(bottomLabel)
+    bottomLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    bottomLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(bottomText)
+    bottomText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    bottomText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    bottomText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -351,8 +556,32 @@ class HairCell : UITableViewCell {
     setupView()
   }
   
+  let hairLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Hair Color"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let hairText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(hairLabel)
+    hairLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    hairLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(hairText)
+    hairText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    hairText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    hairText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -368,8 +597,32 @@ class EyesCell : UITableViewCell {
     setupView()
   }
   
+  let eyesLabel : UILabel = {
+    let lbl = UILabel()
+    lbl.translatesAutoresizingMaskIntoConstraints = false
+    lbl.text = "Eyes Color"
+    lbl.font = UIFont(name: "Avenir-Heavy", size: 11)
+    lbl.textColor = UIColor(red: 41/255, green: 172/255, blue: 226/255, alpha: 1)
+    return lbl
+  }()
+  
+  let eyesText : UITextField = {
+    let txt = UITextField()
+    txt.translatesAutoresizingMaskIntoConstraints = false
+    txt.font = UIFont(name: "Avenir-Light", size: 13)
+    txt.textColor = UIColor.black
+    return txt
+  }()
+  
   func setupView() {
+    addSubview(eyesLabel)
+    eyesLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    eyesLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
     
+    addSubview(eyesText)
+    eyesText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15).isActive = true
+    eyesText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 15).isActive = true
+    eyesText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
   }
   
   required init?(coder aDecoder: NSCoder) {
